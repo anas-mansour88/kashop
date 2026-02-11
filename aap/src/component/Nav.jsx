@@ -35,12 +35,13 @@ export default function Nav() {
           <Button color="inherit" component={NavLink} to="/about">
             About
           </Button>
-           <Button color="inherit" component={NavLink} to="/User">
-            user
-          </Button>
+           
 
            <Button color="inherit" component={NavLink} to="/Login">
             login
+          </Button>
+          <Button color="inherit" component={NavLink} to="/Register">
+           register
           </Button>
         </Toolbar>
       </AppBar>

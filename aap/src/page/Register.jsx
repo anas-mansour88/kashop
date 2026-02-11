@@ -1,3 +1,4 @@
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
@@ -14,7 +15,7 @@ import schema from '/src/validaion/Regeix.jsx';
 
 
 
-export default function Login() {
+export default function Register() {
 
 
   const { control, handleSubmit, formState: { errors } } = useForm({
@@ -37,7 +38,7 @@ export default function Login() {
     <Container maxWidth="sm">
       <Box sx={{ mt: 6, p: 4, boxShadow: 3, borderRadius: 2 }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Login
+          Register
         </Typography>
 
      
@@ -59,7 +60,21 @@ export default function Login() {
             )}
           />
 
-     
+          <Controller
+            name="fullName"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                fullWidth
+                label="Full Name"
+                error={!!errors.fullName}
+                helperText={errors.fullName?.message}
+                margin="normal"
+              />
+            )}
+          />
 
           <Controller
             name="email"
@@ -95,7 +110,21 @@ export default function Login() {
             )}
           />
 
-        
+          <Controller
+            name="phoneNumber"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                fullWidth
+                label="Phone Number"
+                error={!!errors.phoneNumber}
+                helperText={errors.phoneNumber?.message}
+                margin="normal"
+              />
+            )}
+          />
 
        <Button
   fullWidth
